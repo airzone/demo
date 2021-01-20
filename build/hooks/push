@@ -2,7 +2,7 @@
 
 for p in ${PLATFORM//,/ }
 do
-  docker push $IMAGE_NAME-linux-arm64
+  docker push $IMAGE_NAME-${p/\//-}
 done
 curl -Lo manifest-tool https://github.com/estesp/manifest-tool/releases/download/v1.0.3/manifest-tool-linux-amd64
 chmod +x manifest-tool
