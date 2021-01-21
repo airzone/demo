@@ -3,6 +3,7 @@
 mkdir -p /etc/docker
 echo "{\"experimental\":true}" > /etc/docker/daemon.json
 service docker restart
+docker info
 
 for p in ${PLATFORM//,/ }
 do
