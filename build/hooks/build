@@ -1,10 +1,5 @@
 #!/bin/bash
 
-mkdir -p /etc/docker
-echo "{\"experimental\":true}" > /etc/docker/daemon.json
-service docker restart
-docker info
-
 for p in ${PLATFORM//,/ }
 do
   docker build --platform $p -f $DOCKERFILE_PATH -t $IMAGE_NAME-${p/\//-} .
