@@ -1,14 +1,6 @@
 #!/bin/bash
 
-if [ -f /etc/docker/daemon.json ]; then
-  echo /etc/docker/daemon.json
-  cat /etc/docker/daemon.json
-fi
-if [ -f ~/.docker/daemon.json ]; then
-  echo ~/.docker/daemon.json
-  cat ~/.docker/daemon.json
-fi
-
+mkdir -p /etc/docker
 echo "{\"experimental\":true}" > /etc/docker/daemon.json
 service docker restart
 
