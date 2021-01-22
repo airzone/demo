@@ -1,4 +1,5 @@
 #!/bin/bash
+env
 
 for p in ${PLATFORM//,/ }
 do
